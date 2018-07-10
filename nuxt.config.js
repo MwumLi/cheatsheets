@@ -37,5 +37,21 @@ module.exports = {
         })
       }
     }
+  },
+  generate: {
+    dir: 'dist',
+    routes: function () {
+      let routes = [];
+      try {
+        const fs = require('fs');
+        routes = fs.readdirSync('./markdowns').map(file => {
+          file = file.split('.')[0];
+          return `/cmds/${file}`;
+        })
+      } catch (err) {
+        console.log('[构建静态站点]:', err)
+      }
+      return routes;
+    }
   }
 }
