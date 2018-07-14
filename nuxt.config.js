@@ -46,7 +46,7 @@ module.exports = {
         const fs = require('fs');
         routes = fs.readdirSync('./markdowns').map(file => {
           file = file.split('.')[0];
-          return `/cmds/${file}`;
+          return `/card/${file}`;
         })
       } catch (err) {
         console.log('[构建静态站点]:', err)

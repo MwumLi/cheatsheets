@@ -33,7 +33,7 @@ export default {
 					file = file.split('.')[0]
 					return {
 						title: file,
-						url: '/cmds/' + file,
+						url: '/card/' + file,
 						description: file
 					}
 				});
