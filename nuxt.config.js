@@ -7,14 +7,15 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '常用命令的cheatsheets' }
+      { hid: 'description', name: 'description', content: '编程中常用的cheatsheets, 包含命令片段或详细博文' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   env: {
-    mdBase: "https://github.com/MwumLi/cheatsheets/tree/master/markdowns"
+    mdBase: "https://github.com/MwumLi/cheatsheets/tree/master/markdowns",
+    markdown: 'markdowns'
   },
   /*
   ** Customize the progress bar color
@@ -45,7 +46,11 @@ module.exports = {
       try {
         const fs = require('fs');
         routes = fs.readdirSync('./markdowns').map(file => {
-          file = file.split('.')[0];
+          let arr = file.split('.');
+          file = arr[0];
+          if (arr.length > 2) {
+            return `/post/${file}`;
+          }
           return `/card/${file}`;
         })
       } catch (err) {

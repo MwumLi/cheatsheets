@@ -1,17 +1,17 @@
 <template>
 <div class="cmd-wrap">
-  <card v-for="(cmd, index) in cmds" :key="cmd.name" :url="cmd.url" :title="cmd.title" :description="cmd.description" :bgColor="colorsMap[colors[index%colorsLength]]"></card>
+  <card v-for="(card, index) in cards" :key="card.title+'-'+card.type" :title="card.title" :url="card.url" :type="card.type" :description="card.description" :bgColor="colorsMap[colors[index%colorsLength]]"></card>
 </div>
 </template>
 
 <script>
 
-import Card from './Card.vue'
+import Card from '~/components/dumb/Card.vue'
 
 export default {
   components: { Card },
   props: {
-    cmds: {
+    cards: {
       type: Array,
       default: () => []
     }

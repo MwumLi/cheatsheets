@@ -11,37 +11,58 @@
 		</header>
 	</section>
 	<section class="command">
-		<cmd :cmds="viewCmds"></cmd>
+		<Cards :cards="viewCmds"></Cards>
 	</section>
 </div>
 </template>
 
 <script>
-import Cmd from '~/components/Cmd.vue'
+import Cards from '~/components/smart/Cards.vue'
 
 export default {
   components: {
-    Cmd
+    Cards
   },
-  asyncData () {
-    let cmds = []
+  asyncData ({env}) {
+    let cards = []
     if (process.server) {
-      console.log('server')
       const fs = require('fs');
+      let data = {}
       try {
-        cmds = fs.readdirSync('./markdowns').map(file => {
-					file = file.split('.')[0]
-					return {
-						title: file,
-						url: '/card/' + file,
-						description: file
-					}
+        fs.readdirSync(`./${env.markdown}`).map(file => {
+          let fileArr = file.split('.').slice(0, -1)
+					let title = fileArr[0]
+          if (data[title] === undefined) {
+            data[title] = { title: title, types: [], url: '', description: title }
+          }
+
+          let item = data[title];
+          let name = title || fileArr.join('.');
+          let type = {
+            type: 'card',
+            url: `/card/${name}`
+          }
+
+          if (fileArr.length > 1) {
+            type = {
+              type: 'post',
+              url: `/post/${name}`
+            };
+          }
+          item.types.push(type);
+          item.url = type.url;
 				});
+
+        Object.keys(data).map(k => {
+            data[k].types.map(type => {
+              cards.push({...data[k], ...type})
+            })
+        });
       } catch (err) {
         console.log("[获取文件列表]:", err)
       }
     }
-    return { cmds }
+    return { cards }
   },
 	data () {
 		return {
@@ -51,7 +72,7 @@ export default {
 	},
 	computed: {
 		viewCmds () {
-			var _cmds = (this.cmds || []).slice();
+			var _cmds = (this.cards || []).slice();
 			var _queryArr = this.query.trim().split(' ');
 			_cmds = _cmds.filter(item => {
 				return _queryArr.some(_query => item.title.indexOf(_query) > -1)

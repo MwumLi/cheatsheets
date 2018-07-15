@@ -62,9 +62,8 @@ module.exports = (markdown) => {
   }
 
   opts.renderer = renderer;
-  marked.setOptions(opts);
 
-	let html = marked(markdown);
+	let html = marked(markdown, opts);
   html += trailingBlockHeading(opts._markedBlockHeadingArr);
 
 	return html

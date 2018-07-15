@@ -1,6 +1,7 @@
 <template>
   <div class="card" :style="{backgroundColor: bgColor}">
     <a :href="url" target="_blank" :title="description"></a>
+    <span>{{type}}</span>
     {{title}}
   </div>
 </template>
@@ -10,6 +11,7 @@ export default {
   props: {
     url: '',
     title: '',
+    type: '',
     description: '',
     bgColor: {
       type: String,
@@ -51,6 +53,14 @@ export default {
       background: none;
       width: 100%;
       height: 100%;
+    }
+
+    span {
+			position: absolute;
+			right: 2px;
+			bottom: 1px;
+			font-size: 14px;
+			font-weight: normal;
     }
   }
 </style>

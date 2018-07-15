@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import markdown2html from './markdown2html.js';
+import marked from './marked.js';
 
 export default {
   asyncData ({params, env}) {
@@ -20,15 +20,15 @@ export default {
     if (process.server) {
       const fs = require('fs');
       try {
-        let markdown = fs.readFileSync(`./markdowns/${params.cmd}.md`, 'utf-8');
-        html = markdown2html(markdown);
+        let markdown = fs.readFileSync(`./${env.markdown}/${params.name}.md`, 'utf-8');
+        html = marked(markdown);
         console.log('server')
       } catch(err) {
         console.log("[获取文件内容]:", err)
       }
     }
 
-    return { html, editUrl: `${env.mdBase}/${params.cmd}.md`}
+    return { html, editUrl: `${env.mdBase}/${params.name}.md`}
   }
 }
 </script>
