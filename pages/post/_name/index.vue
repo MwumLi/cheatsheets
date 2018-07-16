@@ -23,7 +23,6 @@ export default {
       try {
         let markdown = fs.readFileSync(`./markdowns/${params.name}.post.md`, 'utf-8');
         html = marked(markdown);
-        console.log('server')
       } catch(err) {
         console.log("[获取文件内容]:", err)
       }
