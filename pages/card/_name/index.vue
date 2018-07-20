@@ -14,10 +14,10 @@
 <script>
 
 export default {
-  asyncData ({params, env}) {
+  middleware: 'card',
+  asyncData ({params, env, marked }) {
     let html = '';
-    if (process.server) {
-      const marked = require('./marked');
+    if (process.server && marked) {
       const fs = require('fs');
       try {
         let markdown = fs.readFileSync(`./${env.markdown}/${params.name}.md`, 'utf-8');

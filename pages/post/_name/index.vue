@@ -15,10 +15,10 @@
 <script>
 
 export default {
-  asyncData ({params, env}) {
+  middleware: 'post',
+  asyncData ({params, env, marked}) {
     let html = '';
-    if (process.server) {
-      const marked = require('./marked');
+    if (process.server && marked) {
       const fs = require('fs');
       try {
         let markdown = fs.readFileSync(`./markdowns/${params.name}.post.md`, 'utf-8');

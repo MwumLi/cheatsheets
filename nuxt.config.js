@@ -37,7 +37,8 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    vendor: ['marked', 'highlight.js']
   },
   generate: {
     dir: 'dist',
