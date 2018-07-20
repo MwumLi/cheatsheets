@@ -30,6 +30,9 @@ export default {
       let data = {}
       try {
         fs.readdirSync(`./${env.markdown}`).map(file => {
+          // 忽略隐藏文件
+          if (file.startsWith('.')) return;
+
           let fileArr = file.split('.').slice(0, -1)
 					let title = fileArr[0]
           if (data[title] === undefined) {
