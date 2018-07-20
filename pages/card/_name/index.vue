@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import marked from './marked.js';
 
 export default {
   asyncData ({params, env}) {
     let html = '';
     if (process.server) {
+      const marked = require('./marked');
       const fs = require('fs');
       try {
         let markdown = fs.readFileSync(`./${env.markdown}/${params.name}.md`, 'utf-8');
