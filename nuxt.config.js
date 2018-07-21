@@ -1,3 +1,5 @@
+const cheerio = require('cheerio')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -57,6 +59,17 @@ module.exports = {
         console.log('[构建静态站点]:', err)
       }
       return routes;
+    }
+  },
+  // 去除 preload script
+  render: { resourceHints: false },
+  hooks: {
+    // 处理生成后的页面
+    "generate:page": page => {
+      const doc = cheerio.load(page.html);
+      // 移除所有的 script
+      doc(`body script`).remove();
+      page.html = doc.html();
     }
   }
 }
