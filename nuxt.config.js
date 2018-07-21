@@ -39,6 +39,10 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      if (isClient) { // 去除 js 压缩, 加快构建速度
+        config.plugins.pop()
+      }
     }
   },
   generate: {

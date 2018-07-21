@@ -2,7 +2,7 @@
 <div>
   <div class="page-header">
     <a href="/" class="btn pull-left toggle-search" title="search">
-      <i class="fa fa-search"></i>
+      <img src="/search.svg"/>
     </a>
     <a :href="editUrl" class="btn pull-left edit" target="_blank">在 Github 上编辑此页</a>
   </div>
