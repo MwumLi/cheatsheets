@@ -17,9 +17,6 @@ install:
 script:
   - echo "Skipping tests"
 
-before_deploy:
-  - ls ./dist/**/*.js | xargs rm -rfv
-
 deploy:
   provider: pages
   skip-cleanup: true
