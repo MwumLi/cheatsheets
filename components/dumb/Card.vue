@@ -1,6 +1,6 @@
 <template>
   <div class="card" :style="{backgroundColor: bgColor}">
-    <a :href="url" target="_blank" :title="description"></a>
+    <a :href="url" :title="description"></a>
     <span>{{type}}</span>
     {{title}}
   </div>
