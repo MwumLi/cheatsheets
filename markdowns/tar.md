@@ -80,6 +80,3 @@
 	tar -tvf test.tar.gz
 	tar -tvf test.iso
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTY0MDU4NjddfQ==
--->
