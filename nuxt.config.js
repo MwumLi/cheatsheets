@@ -39,10 +39,6 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-
-      if (isClient) { // 去除 js 压缩, 加快构建速度
-        config.plugins.pop()
-      }
     }
   },
   generate: {
@@ -70,10 +66,13 @@ module.exports = {
   hooks: {
     // 处理生成后的页面
     "generate:page": page => {
-      const doc = cheerio.load(page.html);
-      // 移除所有的 script
-      doc(`body script`).remove();
-      page.html = doc.html();
+      // 除首页外, 其余静态页面删除 js
+      if (page.route != '/') {
+        const doc = cheerio.load(page.html);
+        // 移除所有的 script
+        doc(`body script`).remove();
+        page.html = doc.html();
+      }
     }
   }
 }
