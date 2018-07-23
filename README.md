@@ -1,5 +1,7 @@
 # cheatsheets
 
+![Travis Status](https://api.travis-ci.org/MwumLi/cheatsheets.svg?branch=master)
+
 记录常用的一些命令的 cheatsheets  
 
 在线地址: https://cheatsheets.ifmicro.com  
