@@ -6,6 +6,8 @@
 
 在线地址: https://cheatsheets.ifmicro.com  
 
+chrome 设置搜索引擎: `https://cheatsheets.ifmicro.com/?q=%s`  
+
 ## cheatsheet 与 markdown
 
 所有的命令的 cheatsheet 使用 markdown 作为记录, cheatsheets 位置[在这里](./markdowns)  

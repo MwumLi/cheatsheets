@@ -23,7 +23,7 @@ export default {
   components: {
     Cards
   },
-  asyncData ({env}) {
+  asyncData ({env, query}) {
     let cards = []
     if (process.server) {
       const fs = require('fs');
@@ -65,7 +65,8 @@ export default {
         console.log("[获取文件列表]:", err)
       }
     }
-    return { cards }
+
+    return { cards, query: query.q || '' }
   },
 	data () {
 		return {
