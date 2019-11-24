@@ -13,6 +13,7 @@ branches:
 install:
   - npm install
   - npm run generate
+  - echo $(travis_internal_ruby)
 
 script:
   - echo "Skipping tests"
