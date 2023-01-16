@@ -1,7 +1,7 @@
 {
   "name": "cheatsheets",
   "short_name": "cheatsheets",
-  "description": "## Build Setup",
+  "description": "记录常用的一些命令的 cheatsheets",
   "icons": [
     {
       "src": "/_nuxt/icons/icon_64x64.e3e9fb.png",
