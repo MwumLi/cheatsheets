@@ -1,68 +1,68 @@
 # cheatsheets
 
-## Build Setup
+记录常用的一些命令的 cheatsheets  
 
-```bash
-# install dependencies
-$ yarn install
+在线地址: https://cheatsheets.ifmicro.com  
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+chrome 设置搜索引擎: `https://cheatsheets.ifmicro.com/?q=%s`  
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+## cheatsheet 与 markdown
 
-# generate static project
-$ yarn generate
-```
+所有的命令的 cheatsheet 使用 markdown 作为记录, cheatsheets 位置[在这里](./markdowns)  
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+### Card
 
-## Special Directories
+小卡片复古风: 每一个小功能都是一张卡片, 充满回忆感  
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+文件命名为: `xxx.md`  
 
-### `assets`
+写作规范:  
+* 标准的 markdown 语法
+* 页面标题: 格式为 `# 页面标题`, 放在文章首部, 页面标题必须有且只能有一个哦  
+* 小卡片:  
+  * 卡片标题: 格式为 `## 卡片标题`, 表示这个小卡片的主题  
+  * 卡片内容: 一个命令描述(普通文本)加一个(段)命令(markdown 的换行缩进式代码块)  
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+		## 初始化仓库
+		
+		初始化仓库:  
+			
+			git init
+		
+		初始化裸仓库:  
+		
+			git init --bare
+		
+		克隆仓库:  
+		
+			git clone <git-repo>
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+### Post
 
-### `components`
+流行博文风: 当代流行博文风格, 时尚^v^  
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+对于那些难于用卡片风的命令, 我们可以采用博文的形式生成
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+文件命名: `xxx.post.md`  
 
-### `layouts`
+写作规范:  
+* 标准 markdown 语法  
+* 整篇文章必须有一个且只能有一个 `# 页面标题`: 页面标题只能有一个  
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+当然可以卡片化的尽量卡片化, 卡片化的可能是我能力不够, 不能精简, 可爱而聪明的你一定可以帮到我吧, 请和我一起完善这项工作吧^v^  
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+## 技术
 
-### `pages`
+使用 vue2 + nuxt.js
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+## 命令
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+* 安装依赖: `yarn`  
+* 开发: `yarn dev`  
+* 生产环境构建和启动服务: `yarn build && yarn start`
+* 生成静态站点: `npm generate`
 
-### `plugins`
+## 想法
 
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+* 瀑布流的想法来源于 https://shfshanyue.github.io/cheat-sheets/git  
+* cheatsheets 的想法源于 Linux/Mac 下的工具 [cheat](https://github.com/chrisallenlane/cheat)  
