@@ -18,7 +18,7 @@ export default {
   css: [],
   // https://nuxtjs.org/docs/directory-structure/nuxt-config#env
   env: {
-    mdBase: 'https://github.com/MwumLi/cheatsheets/tree/master/markdowns',
+    mdBase: 'https://github.com/MwumLi/cheatsheets/tree/main/markdowns',
     markdown: 'markdowns',
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
