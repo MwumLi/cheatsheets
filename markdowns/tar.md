@@ -64,6 +64,11 @@
 
 	tar -xvf test.tar.bz2 -C <dir>
 
+解压时候忽略压缩包中一层目录层级：
+```
+tar -xvf test.tar.gz --strip-components=1 -C <dir>
+```
+
 ## 查看包
 
 查看包或压缩包:  
