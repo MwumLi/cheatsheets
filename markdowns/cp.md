@@ -4,5 +4,5 @@
 
 复制目录，不修改源文件修改时间、权限等属性：  
 ``` bash
-cp -RP /path/source /path/destination
+cp -Rp /path/source /path/destination
 ```
